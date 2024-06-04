@@ -237,3 +237,7 @@ footer {
 .large-icon {
     font-size: 200px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
