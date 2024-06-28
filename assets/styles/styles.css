@@ -244,25 +244,28 @@ html {
 
 .videos-container {
     display: flex;
-    justify-content: space-around; /* Ajusta esto según tus necesidades de diseño */
-    align-items: center; /* Centra los videos verticalmente */
-    flex-wrap: wrap; /* Permite que los items se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los contenedores de video */
+    align-items: center; /* Alinea verticalmente */
+    flex-wrap: nowrap; /* Evita que los videos se apilen verticalmente */
     margin: 20px 0;
 }
 
 .video-container {
-    flex: 1; /* Cada video toma igual espacio en el contenedor */
-    padding: 10px; /* Espacio entre videos */
-    max-width: 50%; /* Máximo 50% del ancho del contenedor padre */
+    flex: 1 1 50%; /* Cada contenedor de video ocupa el 50% del espacio disponible */
+    padding: 10px; /* Espacio entre los videos */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
 }
 
 iframe {
-    width: 100%; /* El iframe toma todo el ancho de .video-container */
-    height: 315px; /* Altura fija */
+    width: 100%; /* Asegura que el iframe ocupe todo el espacio del contenedor */
+    height: 315px; /* Altura fija, ajustable según necesidad */
 }
 
 @media (max-width: 800px) {
+    .videos-container {
+        flex-direction: column; /* Apila los videos verticalmente en pantallas pequeñas */
+    }
     .video-container {
-        max-width: 100%; /* En pantallas pequeñas, cada video toma el 100% del ancho */
+        flex: 1 1 100%; /* Cada video ocupa el 100% del ancho en pantallas pequeñas */
     }
 }
