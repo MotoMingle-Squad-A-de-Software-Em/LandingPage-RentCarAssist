@@ -241,3 +241,28 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+.videos-container {
+    display: flex;
+    justify-content: space-around; /* Ajusta esto según tus necesidades de diseño */
+    align-items: center; /* Centra los videos verticalmente */
+    flex-wrap: wrap; /* Permite que los items se envuelvan en pantallas pequeñas */
+    margin: 20px 0;
+}
+
+.video-container {
+    flex: 1; /* Cada video toma igual espacio en el contenedor */
+    padding: 10px; /* Espacio entre videos */
+    max-width: 50%; /* Máximo 50% del ancho del contenedor padre */
+}
+
+iframe {
+    width: 100%; /* El iframe toma todo el ancho de .video-container */
+    height: 315px; /* Altura fija */
+}
+
+@media (max-width: 800px) {
+    .video-container {
+        max-width: 100%; /* En pantallas pequeñas, cada video toma el 100% del ancho */
+    }
+}
